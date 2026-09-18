@@ -22,11 +22,11 @@ live progress throughout the workflow.
 
 ### Demo Video 1
 
-[▶️ Watch PRForge workflow demo](assets/ss1.mp4)
+![▶️ Watch PRForge workflow demo](assets/ss1.mp4)
 
 ### Demo Video 2
 
-[▶️ Watch PRForge GitHub Issue demo](assets/ss2.mp4)
+![▶️ Watch PRForge GitHub Issue demo](assets/ss2.mp4)
 
 ------------------------------------------------------------------------
 
@@ -172,12 +172,6 @@ PRForge/
 │   ├── test_agent.py
 │   ├── test_github_service.py
 │   └── test_sandbox.py
-│
-├── assets/
-│   ├── ss1.png
-│   ├── ss2.png
-│   ├── ss1.mp4
-│   └── ss2.mp4
 │
 ├── Dockerfile
 ├── docker-compose.yml
