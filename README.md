@@ -1,11 +1,11 @@
-# PRForge
+# PRCraft
 
 ### Forge code. Automate PRs. Ship faster.
 
-**PRForge** is an open-source, Python-based AI developer tool that turns
+**PRCraft** is an open-source, Python-based AI developer tool that turns
 a GitHub Issue into a Pull Request with minimal manual intervention.
 
-Give PRForge a GitHub Issue URL. It fetches the issue, resolves
+Give PRCraft a GitHub Issue URL. It fetches the issue, resolves
 repository access, creates an isolated workspace and fix branch, lets a
 coding agent analyze and implement the fix, then commits, pushes, and
 opens the Pull Request.
@@ -17,24 +17,24 @@ opens the Pull Request.
 
 ## 🎥 Demo
 
-PRForge is designed to work directly from the terminal while showing
+PRCraft is designed to work directly from the terminal while showing
 live progress throughout the workflow.
 
 ### Demo Video 1
 
-![▶️ Watch PRForge workflow demo](assets/ss1.mp4)
+![▶️ Watch PRCraft workflow demo](assets/ss1.mp4)
 
 ### Demo Video 2
 
-![▶️ Watch PRForge GitHub Issue demo](assets/ss2.mp4)
+![▶️ Watch PRCraft GitHub Issue demo](assets/ss2.mp4)
 
 ------------------------------------------------------------------------
 
 ## 📸 Screenshots
 
-### PRForge running inside VS Code
+### PRCraft running inside VS Code
 
-![PRForge development environment](assets/ss1.png)
+![PRCraft development environment](assets/ss1.png)
 
 ### GitHub Issue used as the automation trigger
 
@@ -66,12 +66,12 @@ live progress throughout the workflow.
     logged Git commands and secrets are kept in environment variables.
 -   🧪 **Automated tests** --- includes tests for issue URL parsing,
     GitHub service behavior, agent behavior, and sandbox safety.
--   🐳 **Docker Compose support** --- run PRForge conveniently inside a
+-   🐳 **Docker Compose support** --- run PRCraft conveniently inside a
     container.
 
 ------------------------------------------------------------------------
 
-## 🧭 How PRForge Works
+## 🧭 How PRCraft Works
 
 ``` text
 Paste GitHub Issue URL
@@ -155,7 +155,7 @@ app/
 ## 📁 Repository Structure
 
 ``` text
-PRForge/
+PRCraft/
 ├── app/
 │   ├── __init__.py
 │   ├── agent.py
@@ -187,7 +187,7 @@ PRForge/
 
 ## ⚙️ Prerequisites
 
-Before running PRForge, make sure you have:
+Before running PRCraft, make sure you have:
 
 -   **Python 3.11+**
 -   **Git**
@@ -203,8 +203,8 @@ Before running PRForge, make sure you have:
 ### 1. Clone the repository
 
 ``` bash
-git clone https://github.com/<your-username>/PRForge.git
-cd PRForge
+git clone https://github.com/<your-username>/PRCraft.git
+cd PRCraft
 ```
 
 ### 2. Create a virtual environment
@@ -246,7 +246,7 @@ credentials, model, and sandbox settings.
 
 ## 🔐 Configuration
 
-PRForge uses environment-driven configuration.
+PRCraft uses environment-driven configuration.
 
 Typical settings include:
 
@@ -260,7 +260,7 @@ SANDBOX_KEEP_WORKSPACE_ON_FAILURE=true
 ```
 
 Use `.env.example` as the source of truth for the configuration
-supported by your version of PRForge.
+supported by your version of PRCraft.
 
 ------------------------------------------------------------------------
 
@@ -294,7 +294,7 @@ Process multiple issues sequentially:
 python -m app.cli --loop
 ```
 
-PRForge can also extract the first GitHub Issue URL from a longer pasted
+PRCraft can also extract the first GitHub Issue URL from a longer pasted
 message:
 
 ``` text
@@ -321,7 +321,7 @@ an empty string by adding an explicit empty-input check
 and a regression test.
 ```
 
-If the agent or GitHub/sandbox pipeline fails, PRForge reports the
+If the agent or GitHub/sandbox pipeline fails, PRCraft reports the
 failure and exits with a non-zero status code, making it suitable for
 scripting and CI workflows.
 
@@ -350,7 +350,7 @@ docker compose run --rm ghbot
 
 ### Docker sandbox
 
-When using the Docker sandbox backend, PRForge can launch repository
+When using the Docker sandbox backend, PRCraft can launch repository
 work inside a restricted container environment.
 
 The sandbox configuration uses:
@@ -375,7 +375,7 @@ and remove the Docker socket mount from `docker-compose.yml`.
 
 ## 🔀 Repository Access Strategy
 
-PRForge automatically determines how it can work with the target
+PRCraft automatically determines how it can work with the target
 repository.
 
 ### Direct access
@@ -412,14 +412,14 @@ Push to Fork
 Open PR → Upstream Repository
 ```
 
-This allows PRForge to work with external/public repositories without
+This allows PRCraft to work with external/public repositories without
 requiring direct write access to the upstream repository.
 
 ------------------------------------------------------------------------
 
 ## 🛡️ Security
 
-PRForge is designed with isolation and secret handling in mind.
+PRCraft is designed with isolation and secret handling in mind.
 
 ### Sandbox security
 
@@ -454,7 +454,7 @@ Your `.env` file should remain git-ignored.
 
 ### Failure inspection
 
-When configured to do so, PRForge preserves a failed workspace so
+When configured to do so, PRCraft preserves a failed workspace so
 developers can inspect what the coding agent changed.
 
 ------------------------------------------------------------------------
@@ -476,9 +476,9 @@ Tests cover areas such as:
 
 ------------------------------------------------------------------------
 
-## 🧩 Extending PRForge
+## 🧩 Extending PRCraft
 
-PRForge is intentionally structured so contributors can extend the
+PRCraft is intentionally structured so contributors can extend the
 pipeline.
 
 ### Add repository tools
@@ -501,7 +501,7 @@ ANTHROPIC_MODEL
 ### Add another trigger
 
 The core pipeline is exposed through `run_issue_pipeline`, making it
-possible to connect PRForge to another interface later, such as:
+possible to connect PRCraft to another interface later, such as:
 
 -   Webhooks
 -   Scheduled jobs
@@ -514,7 +514,7 @@ possible to connect PRForge to another interface later, such as:
 
 ## 🤝 Contributing
 
-**PRForge is open source, and contributions are welcome!**
+**PRCraft is open source, and contributions are welcome!**
 
 Whether you want to fix a bug, improve the sandbox, add a new AI
 provider, build a new repository tool, improve documentation, add tests,
@@ -589,7 +589,7 @@ Potential future improvements include:
 
 ## 📄 License
 
-PRForge is open source.
+PRCraft is open source.
 
 Add your project's chosen license file (for example, `LICENSE`) to
 define the terms under which others can use, modify, and distribute the
@@ -599,7 +599,7 @@ project.
 
 ## ⭐ Support the Project
 
-If PRForge is useful to you:
+If PRCraft is useful to you:
 
 -   ⭐ Star the repository
 -   🐛 Report bugs
@@ -610,7 +610,7 @@ If PRForge is useful to you:
 
 ------------------------------------------------------------------------
 
-## 🔥 PRForge
+## 🔥 PRCraft
 
 > **From GitHub Issue to Pull Request --- automatically.**
 
