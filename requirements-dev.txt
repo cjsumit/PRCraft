@@ -1,0 +1,5 @@
+-r requirements.txt
+pytest==8.3.3
+respx==0.21.1
+ruff==0.6.9
+mypy==1.11.2

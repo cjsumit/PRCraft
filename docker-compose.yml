@@ -1,0 +1,23 @@
+version: "3.9"
+
+# Convenience wrapper around `docker build` + `docker run` for the CLI.
+# Usage:
+#   docker compose run --rm ghbot https://github.com/owner/repo/issues/42
+#   docker compose run --rm ghbot            # interactive prompt / --loop mode
+
+services:
+  ghbot:
+    build: .
+    env_file: .env
+    stdin_open: true
+    tty: true
+    volumes:
+      - workspaces:/tmp/ghbot-workspaces
+      # Mount the host Docker socket so the CLI can launch sandbox
+      # containers (SANDBOX_BACKEND=docker). Omit this and set
+      # SANDBOX_BACKEND=local in .env if you don't want to grant
+      # Docker-in-Docker access to this container.
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  workspaces:
